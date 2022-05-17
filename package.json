@@ -1,0 +1,19 @@
+{
+  "name": "nomss",
+  "version": "1.0.0",
+  "description": "Nib Code Challenge",
+  "main": "index.ts",
+  "scripts": {
+    "test": "npx tsc && npx run-func index.js  processOrders [1,2,3]"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruilunli/NOMSS.git"
+  },
+  "author": "Ruilun Li",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruilunli/NOMSS/issues"
+  },
+  "homepage": "https://github.com/ruilunli/NOMSS#readme"
+}
