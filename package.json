@@ -4,7 +4,7 @@
   "description": "Nib Code Challenge",
   "main": "index.ts",
   "scripts": {
-    "test": "npx tsc && npx run-func index.js  processOrders [1,2,3]"
+    "processOrders": "npx tsc && npx run-func index.js  processOrders"
   },
   "repository": {
     "type": "git",
