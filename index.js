@@ -42,11 +42,13 @@ function processOrders(orderIdsString) {
         existOrders.forEach(existOrder => {
             var fulfillable = orderService.checkOrder(existOrder, products);
             if (fulfillable) {
+                existOrder.status = "Fulfilled";
                 fulfillableOrders.push(existOrder);
                 // reduce the stock from product master list
                 products = productService.UpdateProductStock(existOrder, products);
             }
             else {
+                existOrder.status = "Unfulfillable";
                 unfulfillableOrders.push(existOrder);
             }
             // Check product stock level to see if we need to generate purchase order
@@ -69,6 +71,11 @@ function processOrders(orderIdsString) {
                  -----------------
                  Incompleted Orders(UnfulfillableOrders):
                  ${JSON.stringify(unfulfillableOrders)}
+                 -----------------
+                 -----------------
+                 -----------------
+                 Updated Product Stock Level:
+                 ${JSON.stringify(products)}
                  -----------------
                  -----------------
                  -----------------

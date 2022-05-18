@@ -53,11 +53,13 @@ export function processOrders(orderIdsString: string) {
         
         
         if(fulfillable) {
+            existOrder.status = "Fulfilled"
             fulfillableOrders.push(existOrder);
             
             // reduce the stock from product master list
             products = productService.UpdateProductStock(existOrder, products);
         } else {
+            existOrder.status = "Unfulfillable";
             unfulfillableOrders.push(existOrder);
         }
         
@@ -83,6 +85,11 @@ export function processOrders(orderIdsString: string) {
                  -----------------
                  Incompleted Orders(UnfulfillableOrders):
                  ${JSON.stringify(unfulfillableOrders)}
+                 -----------------
+                 -----------------
+                 -----------------
+                 Updated Product Stock Level:
+                 ${JSON.stringify(products)}
                  -----------------
                  -----------------
                  -----------------
